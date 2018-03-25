@@ -1,0 +1,94 @@
+{
+  "name": "my-razzle-app",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "razzle start",
+    "build": "razzle build",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "lint": "tslint --project tslint.json"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.6",
+    "@types/express": "^4.0.35",
+    "@types/jest": "^20.0.1",
+    "@types/node": "^8.0.53",
+    "@types/react": "^16.0.9",
+    "@types/react-dom": "^16.0.0",
+    "@types/react-redux": "^5.0.14",
+    "@types/react-router-dom": "^4.2.3",
+    "@types/react-router-redux": "^5.0.10",
+    "@types/redux-actions": "^2.2.3",
+    "@types/serialize-javascript": "^1.3.2",
+    "@types/uid-safe": "^2.1.1",
+    "@types/webpack-env": "^1.13.2",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-mock-now": "^1.2.0",
+    "raf": "^3.4.0",
+    "razzle": "^0.8.12",
+    "ts-jest": "20.0.6",
+    "ts-loader": "2.3.4",
+    "tslint": "5.8.0",
+    "tslint-language-service": "^0.9.6",
+    "tslint-loader": "^3.5.3",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "tslint-react": "^3.2.0",
+    "tslint-sonarts": "^1.2.0",
+    "tsutils": "^2.8.0",
+    "typescript": "2.5.1",
+    "typescript-formatter": "^7.0.1",
+    "typestrict": "^0.0.6"
+  },
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "core-js": "^2.5.3",
+    "express": "^4.16.3",
+    "get-random-values": "^1.2.0",
+    "history": "^4.7.2",
+    "jquery": "^3.3.1",
+    "moment": "^2.20.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-select": "^1.1.0",
+    "redux": "^3.7.2",
+    "redux-actions": "^2.2.1",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-form": "^7.2.0",
+    "redux-saga": "^0.15.0",
+    "serialize-javascript": "^1.4.0",
+    "uid-safe": "^2.1.5"
+  },
+  "jest": {
+    "setupFiles": [
+      "./src/setupTests.js"
+    ],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js",
+      "^.+\\.css$": "<rootDir>/node_modules/razzle/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/node_modules/razzle/config/jest/fileTransform.js"
+    },
+    "testMatch": [
+      "<rootDir>/src/**/tests/**/*.(ts|js)?(x)",
+      "<rootDir>/src/**/?(*.)(unit).(ts|js)?(x)"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "get-random-values": "<rootDir>/__mocks__/get-random-values.js"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}"
+    ]
+  }
+}

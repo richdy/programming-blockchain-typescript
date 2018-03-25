@@ -1,0 +1,21 @@
+.Home {
+  text-align: center;
+}
+
+.Home h2, .Home button {
+  margin-bottom: 25px;
+}
+
+.Home table {
+  margin:0 auto;
+  width: auto;
+  text-align: left;
+}
+
+.Home table tr>td,th {
+  width: 250px;
+}
+
+.Home td.duration, th.duration {
+  width: 100px;
+}

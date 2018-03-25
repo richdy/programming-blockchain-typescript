@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.Home-logo {
+  animation: Home-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.Home-logo.paused {
+  animation-play-state: paused
+}
+
+.Home-logo.busy {
+  animation-play-state: running
+}
+
+.Home-header {
+  background-color: #222;
+  height: 115px;
+  padding: 18px;
+  color: white;
+}
+
+@keyframes Home-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar.navbar-default{
+  border-radius: 0px;
+  background-color: #161616;
+}
