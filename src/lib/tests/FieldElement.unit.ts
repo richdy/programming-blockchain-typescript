@@ -62,4 +62,22 @@ describe('FieldElement', () => {
             })
         })
     })
+
+    describe('subtraction', () => {
+        const fe = new FieldElement(5, 7)
+        describe('success', () => {
+            it('should return a new element that is the difference between the two', () => {
+                const fe2 = new FieldElement(2, 7)
+                expect(fe.sub(fe2)).toEqual(new FieldElement(3, 7))
+            })
+        })
+
+        describe('error', () => {
+            it('should throw an error if elements are not of the same prime field', () => {
+                const fe2 = new FieldElement(2, 11)
+                expect(() => fe.sub(fe2)).toThrow(Error)
+            })
+        })
+
+    })
 })

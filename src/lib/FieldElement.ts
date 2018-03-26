@@ -22,4 +22,11 @@ export class FieldElement {
         }
         return new FieldElement((this.num + fieldElement.num) % this.prime, this.prime)
     }
+
+    public sub(fieldElement: FieldElement): FieldElement {
+        if(fieldElement.prime !== this.prime) {
+            throw new Error('Elements are not on the same prime field')
+        }
+        return new FieldElement((this.num - fieldElement.num) % this.prime ,this.prime)
+    }
 }
