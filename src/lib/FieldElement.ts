@@ -24,9 +24,16 @@ export class FieldElement {
     }
 
     public sub(fieldElement: FieldElement): FieldElement {
+        if(this.prime !== fieldElement.prime) {
+            throw new Error('Elements are not of the same prime field')
+        }
+        return new FieldElement((this.num - fieldElement.num) % this.prime ,this.prime)
+    }
+
+    public mul(fieldElement: FieldElement): FieldElement {
         if(fieldElement.prime !== this.prime) {
             throw new Error('Elements are not on the same prime field')
         }
-        return new FieldElement((this.num - fieldElement.num) % this.prime ,this.prime)
+        return new FieldElement((this.num * fieldElement.num) % this.prime, this.prime)
     }
 }
