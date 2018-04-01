@@ -40,12 +40,8 @@ export class FieldElementBN {
     }
 
     public pow(power: BigInteger): FieldElementBN {
-        if(power.compareTo(BigInteger.ZERO) < 0) {
-            const one = new FieldElementBN(BigInteger.ONE, this.prime)
-            const divisor = new FieldElementBN(this.num, this.prime).pow(power.negate())
-            return one.div(divisor)
-        }
-        return new FieldElementBN(this.num.modPow(new BigInteger(power.toString()), this.prime), this.prime)
+        const exponent = power.mod(this.prime.subtract(BigInteger.ONE))
+        return new FieldElementBN(this.num.modPow(exponent, this.prime), this.prime)
     }
 
     public div(fieldElement: FieldElementBN): FieldElementBN {
